@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Ejercicio 1 - Cálculo de Promedio y Estado</h1>
+    <form method="POST">
+        <label for="nota1">Nota 1:</label>
+        <input type="number" name="nota1" id="nota1" min="10" max="70" required>
+        <br>
+        <label for="nota2">Nota 2:</label>
+        <input type="number" name="nota2" id="nota2" min="10" max="70" required>
+        <br>
+        <label for="nota3">Nota 3:</label>
+        <input type="number" name="nota3" id="nota3" min="10" max="70" required>
+        <br>
+        <label for="asistencia">Asistencia (%):</label>
+        <input type="number" name="asistencia" id="asistencia" min="0" max="100" required>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+
+    {% if result %}
+        <h2>Resultado</h2>
+        <p>Promedio: {{ result.promedio }}</p>
+        <p>Estado: {{ result.estado }}</p>
+    {% endif %}
+
+    <a href="{{ url_for('main.index') }}">Volver al menú principal</a>
+  </div>
+</body>
+</html>
